@@ -1,0 +1,6 @@
+@FrontEdn.Server_HostAddress = http://localhost:5052
+
+GET {{FrontEdn.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
