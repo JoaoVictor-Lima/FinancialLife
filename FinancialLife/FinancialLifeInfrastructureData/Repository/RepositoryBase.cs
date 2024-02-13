@@ -13,7 +13,6 @@ namespace FinancialLifeInfrastructureData.Repository
         {
             _context = context;
         }
-
         public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
             return await _context.Set<TEntity>().AsNoTracking().ToListAsync();

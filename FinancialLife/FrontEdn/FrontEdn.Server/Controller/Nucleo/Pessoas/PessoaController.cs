@@ -2,7 +2,7 @@
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FrontEdn.Server.Controllers.Nucleo.Pessoas
+namespace FrontEdn.Server.Controller.Nucleo.Pessoas
 {
     [Route("Api/v1/[controller]/[action]")]
     public class PessoaController : ControllerBase

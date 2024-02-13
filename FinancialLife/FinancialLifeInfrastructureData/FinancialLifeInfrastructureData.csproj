@@ -15,8 +15,4 @@
     <ProjectReference Include="..\FinancialLifeDomain\FinancialLifeDomain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repository\Nucleo\Pessoas\" />
-  </ItemGroup>
-
 </Project>
