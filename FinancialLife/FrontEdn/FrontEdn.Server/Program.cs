@@ -13,6 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IPessoaAppService, PessoaAppService>();
 builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
 
+builder.Services.AddScoped<IPessoaFisicaAppService, PessoaFisicaAppService>();
+builder.Services.AddScoped<IPessoaFisicaRepository, PessoaFisicaRepository>();
+
 
 builder.Services.AddControllers();
 

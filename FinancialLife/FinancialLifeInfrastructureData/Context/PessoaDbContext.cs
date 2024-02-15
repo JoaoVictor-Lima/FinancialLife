@@ -12,6 +12,7 @@ namespace FinancialLifeInfrastructureData.Context
         }
 
         public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<PessoaFisica> PessoasFisicas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
