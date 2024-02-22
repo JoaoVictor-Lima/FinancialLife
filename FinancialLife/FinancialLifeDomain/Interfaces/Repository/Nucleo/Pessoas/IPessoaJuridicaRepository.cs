@@ -1,8 +1,7 @@
 ﻿using FinancialLifeDomain.Entities;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
-using FinancialLifeDomain.Interfaces;
 
-namespace FinancialLifeDomain.Interfaces.Repository.Pessoas
+namespace FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas
 {
     public interface IPessoaJuridicaRepository : IRepositoryBase<PessoaJuridica>
     {
