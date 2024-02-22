@@ -1,8 +1,8 @@
-﻿using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
+﻿using FinancialLifeAppService.Nucleo.Pessoas.Interfaces;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
-using FinancialLifeDomain.Interfaces.Repository.Pessoas;
+using FinancialLifeDomain.Entities.Nucleo.Pessoas.Interfaces;
 
-namespace FinancialLifeApplication.AppService.Nucleo.Pessoas
+namespace FinancialLifeAppService.Nucleo.Pessoas
 {
     public class PessoaFisicaAppService : IPessoaFisicaAppService
     {

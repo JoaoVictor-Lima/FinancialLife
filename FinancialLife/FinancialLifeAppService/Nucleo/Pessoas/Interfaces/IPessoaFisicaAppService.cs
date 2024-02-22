@@ -1,6 +1,6 @@
 ﻿using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 
-namespace FinancialLifeApplication.Interfaces.Nucleo.Pessoas
+namespace FinancialLifeAppService.Nucleo.Pessoas.Interfaces
 {
     public interface IPessoaFisicaAppService
     {

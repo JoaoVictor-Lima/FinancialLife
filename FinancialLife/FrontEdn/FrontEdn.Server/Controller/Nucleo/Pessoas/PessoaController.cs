@@ -1,4 +1,4 @@
-﻿using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
+﻿using FinancialLifeAppService.Nucleo.Pessoas.Interfaces;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 using Microsoft.AspNetCore.Mvc;
 

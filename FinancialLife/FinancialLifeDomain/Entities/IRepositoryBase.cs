@@ -1,4 +1,4 @@
-﻿namespace FinancialLifeDomain.Interfaces.Repository
+﻿namespace FinancialLifeDomain.Entities
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {

@@ -1,6 +1,6 @@
-﻿using FinancialLifeDomain.Entities.Nucleo.Pessoas;
-using FinancialLifeDomain.Interfaces.Repository;
-using FinancialLifeDomain.Interfaces.Repository.Pessoas;
+﻿using FinancialLifeDomain.Entities;
+using FinancialLifeDomain.Entities.Nucleo.Pessoas;
+using FinancialLifeDomain.Entities.Nucleo.Pessoas.Interfaces;
 using FinancialLifeInfrastructureData.Context;
 
 namespace FinancialLifeInfrastructureData.Repository.Nucleo.Pessoas
