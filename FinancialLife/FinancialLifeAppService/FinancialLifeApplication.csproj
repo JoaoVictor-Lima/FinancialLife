@@ -10,4 +10,8 @@
     <ProjectReference Include="..\FinancialLifeDomain\FinancialLifeDomain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataTranferObjects\Nucleo\Pessoas\" />
+  </ItemGroup>
+
 </Project>
