@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace FinancialLifeInfrastructureData.Context
+namespace FinancialLifeInfrastructureData.Context.Nucleo
 {
     public class PessoaDbContext : DbContext
     {

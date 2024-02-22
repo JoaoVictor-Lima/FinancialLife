@@ -1,11 +1,9 @@
-using FinancialLifeAppService.Nucleo.Pessoas;
-using FinancialLifeAppService.Nucleo.Pessoas.Interfaces;
-using FinancialLifeDomain.Entities.Nucleo.Pessoas.Interfaces;
-using FinancialLifeInfrastructureData.Context;
+using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
+using FinancialLifeApplication.Services.Nucleo.Pessoas;
+using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
+using FinancialLifeInfrastructureData.Context.Nucleo;
 using FinancialLifeInfrastructureData.Repository.Nucleo.Pessoas;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 

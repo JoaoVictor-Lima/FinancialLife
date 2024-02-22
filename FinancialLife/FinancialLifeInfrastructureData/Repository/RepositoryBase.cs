@@ -1,5 +1,5 @@
 ﻿using FinancialLifeDomain.Entities;
-using FinancialLifeInfrastructureData.Context;
+using FinancialLifeInfrastructureData.Context.Nucleo;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinancialLifeInfrastructureData.Repository
