@@ -1,4 +1,4 @@
-﻿using FinancialLifeDomain.Entities;
+﻿using FinancialLifeDomain.Interfaces.Repository;
 using FinancialLifeInfrastructureData.Context.Nucleo;
 using Microsoft.EntityFrameworkCore;
 

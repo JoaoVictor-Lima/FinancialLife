@@ -14,6 +14,9 @@ namespace FrontEdn.Server.Controller.Nucleo.Pessoas
         {
             _pessoaAppService = pessoaAppService;
         }
+
+
+        [HttpGet]
         public async Task<IEnumerable<Pessoa>> GetAllPessoas()
         {
             return await _pessoaAppService.GetAllPessoas();

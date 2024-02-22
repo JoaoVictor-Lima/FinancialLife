@@ -1,5 +1,5 @@
-﻿using FinancialLifeDomain.Entities;
-using FinancialLifeDomain.Entities.Nucleo.Pessoas;
+﻿using FinancialLifeDomain.Entities.Nucleo.Pessoas;
+using FinancialLifeDomain.Interfaces.Repository;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
 using FinancialLifeInfrastructureData.Context.Nucleo;
 
