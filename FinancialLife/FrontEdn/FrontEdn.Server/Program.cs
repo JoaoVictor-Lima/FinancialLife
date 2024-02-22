@@ -1,6 +1,6 @@
 using FinancialLifeApplication.AppService.Nucleo.Pessoas;
 using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
-using FinancialLifeDomain.Interfaces.Repository.Pessoas;
+using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
 using FinancialLifeInfrastructureData.Context;
 using FinancialLifeInfrastructureData.Repository.Nucleo.Pessoas;
 using Microsoft.EntityFrameworkCore;

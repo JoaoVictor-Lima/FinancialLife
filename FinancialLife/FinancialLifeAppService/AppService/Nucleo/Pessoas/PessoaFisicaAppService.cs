@@ -1,6 +1,6 @@
 ﻿using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
-using FinancialLifeDomain.Interfaces.Repository.Pessoas;
+using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
 
 namespace FinancialLifeApplication.AppService.Nucleo.Pessoas
 {
