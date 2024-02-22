@@ -1,7 +1,11 @@
+using FinancialLifeApplication.Intrefaces.Nucleo.Localizacao;
 using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
+using FinancialLifeApplication.Services.Nucleo.Localizacao;
 using FinancialLifeApplication.Services.Nucleo.Pessoas;
+using FinancialLifeDomain.Interfaces.Repository.Nucleo.Localizacao;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
 using FinancialLifeInfrastructureData.Context.Nucleo;
+using FinancialLifeInfrastructureData.Repository.Nucleo.Localizacao;
 using FinancialLifeInfrastructureData.Repository.Nucleo.Pessoas;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +17,9 @@ builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
 
 builder.Services.AddScoped<IPessoaFisicaAppService, PessoaFisicaAppService>();
 builder.Services.AddScoped<IPessoaFisicaRepository, PessoaFisicaRepository>();
+
+builder.Services.AddScoped<IPaisAppService, PaisAppService>();
+builder.Services.AddScoped<IPaisRepository, PaisRepository>();
 
 
 builder.Services.AddControllers();
