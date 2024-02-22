@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FinancialLifeAppService\FinancialLifeAppService.csproj" />
+    <ProjectReference Include="..\..\FinancialLifeAppService\FinancialLifeApplication.csproj" />
     <ProjectReference Include="..\..\FinancialLifeInfrastructureData\FinancialLifeInfrastructureData.csproj" />
     <ProjectReference Include="..\frontedn.client\frontedn.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

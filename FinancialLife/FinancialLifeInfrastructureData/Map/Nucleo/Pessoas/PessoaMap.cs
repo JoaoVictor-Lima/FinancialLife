@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace FinancialLifeInfrastructureData.Map
+namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
 {
     public class PessoaMap : IEntityTypeConfiguration<Pessoa>
     {
