@@ -1,8 +1,10 @@
 ﻿using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace FrontEdn.Server.Controller.Nucleo.Pessoas
+namespace FinancialLifeApplication.Controller.Nucleo.Pessoas
 {
     [Route("Api/v1/[controller]/[action]")]
     public class PessoaFisicaController : ControllerBase
@@ -14,9 +16,9 @@ namespace FrontEdn.Server.Controller.Nucleo.Pessoas
             _pessoaFisicaAppService = pessoaFisicaAppService;
         }
 
-        public async Task<IEnumerable<PessoaFisica>> GetAllPessoasFisicas()
+        public async Task<IEnumerable<PessoaFisica>> GetAllAsync()
         {
-            return await _pessoaFisicaAppService.GetAllPessoasFisicas();
+            return await _pessoaFisicaAppService.GetAllAsync();
         }
     }
 }

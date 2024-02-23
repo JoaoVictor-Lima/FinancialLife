@@ -8,7 +8,7 @@ const Home = () => {
 
   const getPessoa = async() => {
     try {
-      const response = await axios.get("https://localhost:7280/api/v1/Pessoa/GetAllPessoas");
+      const response = await axios.get("https://localhost:7280/api/v1/PessoaFisica/GetAll");
       console.log(response);
       const data = response.data;
       setPessoa(data);

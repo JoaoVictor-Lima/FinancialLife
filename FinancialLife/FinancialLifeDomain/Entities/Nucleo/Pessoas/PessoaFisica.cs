@@ -2,11 +2,10 @@
 {
     public class PessoaFisica : Pessoa
     {
-        public int Id { get; set; }
-        public new string Nome => NomeRazaoSocial;
-        public new DateTime DataNascimento => DataNascimentoAberturaCnpj;
-        public string Cpf { get; set; }
-        public Pessoa Pessoa { get; set; }
-
+        public string Nome { get; private set; }
+        public DateTime DataNascimento { get; set; }
+        public string Cpf { get; private set; }
+        public int IdGeneroPessoa { get; set; }
+        public GeneroPessoa GeneroPessoa { get; set; }
     }
 }

@@ -1,11 +1,9 @@
 ﻿namespace FinancialLifeDomain.Entities.Nucleo.Pessoas
 {
-    public class PessoaJuridica
+    public class PessoaJuridica : Pessoa
     {
-        public int Id { get; set; }
-        public string RazaoSocial { get; set; }
-        public DateTime DataAberturaCnpj { get; set; }
-        public string Cnpj { get; set; }
-        public Pessoa Pessoa { get; set; }
+        public string Cnpj { get; private set; }
+        public string RazaoSocial { get; private set; }
+        public DateTime DataAberturaCnpj { get; private set; }
     }
 }

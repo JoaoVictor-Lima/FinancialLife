@@ -1,10 +1,11 @@
+using FinancialLifeApplication;
 using FinancialLifeApplication.Intrefaces.Nucleo.Localizacao;
 using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
 using FinancialLifeApplication.Services.Nucleo.Localizacao;
 using FinancialLifeApplication.Services.Nucleo.Pessoas;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Localizacao;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
-using FinancialLifeInfrastructureData.Context.Nucleo;
+using FinancialLifeInfrastructureData.Context;
 using FinancialLifeInfrastructureData.Repository.Nucleo.Localizacao;
 using FinancialLifeInfrastructureData.Repository.Nucleo.Pessoas;
 using Microsoft.EntityFrameworkCore;
@@ -12,8 +13,6 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IPessoaAppService, PessoaAppService>();
-builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
 
 builder.Services.AddScoped<IPessoaFisicaAppService, PessoaFisicaAppService>();
 builder.Services.AddScoped<IPessoaFisicaRepository, PessoaFisicaRepository>();
@@ -22,10 +21,11 @@ builder.Services.AddScoped<IPaisAppService, PaisAppService>();
 builder.Services.AddScoped<IPaisRepository, PaisRepository>();
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddApplicationPart(typeof(FinancialLifeApplicationAssemblyReference).Assembly);
 
 //Contexts
-builder.Services.AddDbContext<PessoaDbContext>
+builder.Services.AddDbContext<FinancialLifeDbContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 

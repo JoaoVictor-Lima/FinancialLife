@@ -17,11 +17,14 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Localizacao
             //Property
             builder.Property(x => x.Id)
                 .IsRequired()
-                .HasColumnName("Id");
+                .HasColumnName("Id")
+                .HasColumnType("int");
 
             builder.Property(x => x.Nome)
                 .IsRequired()
-                .HasColumnName("Nome");
+                .HasColumnName("Nome")
+                .HasColumnType("varchar")
+                .HasMaxLength(300);
         }
     }
 }

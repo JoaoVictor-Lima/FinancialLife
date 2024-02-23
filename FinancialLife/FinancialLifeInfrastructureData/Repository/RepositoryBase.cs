@@ -1,5 +1,5 @@
 ﻿using FinancialLifeDomain.Interfaces.Repository;
-using FinancialLifeInfrastructureData.Context.Nucleo;
+using FinancialLifeInfrastructureData.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinancialLifeInfrastructureData.Repository
@@ -7,9 +7,9 @@ namespace FinancialLifeInfrastructureData.Repository
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
 
-        protected PessoaDbContext _context;
+        protected FinancialLifeDbContext _context;
 
-        public RepositoryBase(PessoaDbContext context)
+        public RepositoryBase(FinancialLifeDbContext context)
         {
             _context = context;
         }

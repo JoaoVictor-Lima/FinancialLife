@@ -1,6 +1,8 @@
 ﻿using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FinancialLifeApplication.Services.Nucleo.Pessoas
 {
@@ -12,7 +14,7 @@ namespace FinancialLifeApplication.Services.Nucleo.Pessoas
         {
             _pessoaFisicaRepository = pessoaFisicaRepository;
         }
-        public async Task<IEnumerable<PessoaFisica>> GetAllPessoasFisicas()
+        public async Task<IEnumerable<PessoaFisica>> GetAllAsync()
         {
             return await _pessoaFisicaRepository.GetAll();
         }
