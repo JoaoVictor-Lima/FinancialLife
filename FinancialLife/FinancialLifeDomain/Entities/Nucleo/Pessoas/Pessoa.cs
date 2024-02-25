@@ -1,7 +1,9 @@
-﻿namespace FinancialLifeDomain.Entities.Nucleo.Pessoas
+﻿using FinancialLifeDomain.Interfaces.EntitiesInterface.Nucleo.Pessoas;
+
+namespace FinancialLifeDomain.Entities.Nucleo.Pessoas
 {
-    public class Pessoa
+    public class Pessoa : IPessoa
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
     }
 }

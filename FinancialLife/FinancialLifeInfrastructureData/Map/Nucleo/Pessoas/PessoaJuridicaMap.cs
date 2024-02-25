@@ -12,7 +12,7 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
             builder.ToTable("PessoaJuridica");
 
             //Primary Key
-            builder.HasKey(x => x.Id);
+            builder.HasBaseType<Pessoa>();
 
             //Property
             builder.Property(x => x.Id)
@@ -25,17 +25,6 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
                 .HasColumnName("RazaoSocial")
                 .HasColumnType("varchar")
                 .HasMaxLength(300);
-
-            builder.Property(x => x.Cnpj)
-                .IsRequired()
-                .HasColumnName("Cnpj")
-                .HasColumnType("varchar")
-                .HasMaxLength(14);
-
-            builder.Property(x => x.DataAberturaCnpj)
-                .IsRequired()
-                .HasColumnName("DataAberturaCnpj")
-                .HasColumnType("date");
            
         }
     }

@@ -12,7 +12,7 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
             builder.ToTable("PessoaFisica");
 
             //Primary Key
-            builder.HasKey(x => x.Id);
+            builder.HasBaseType<Pessoa>();
 
             //Property and table
             builder.Property(x => x.Id)

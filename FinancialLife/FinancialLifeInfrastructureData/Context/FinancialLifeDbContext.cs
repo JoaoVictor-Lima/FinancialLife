@@ -13,7 +13,12 @@ namespace FinancialLifeInfrastructureData.Context
         }
         public DbSet<PessoaFisica> PessoasFisicas { get; set; }
         public DbSet<PessoaJuridica> PessoasJuridicas { get; set; }
-        public DbSet<GeneroPessoa> GenersoPessoas { get; set; }
+        public DbSet<GeneroPessoa> GenereroPessoas { get; set; }
+        public DbSet<TelefonePessoa> TelefonesPessoas { get; set; }
+        public DbSet<EmailPessoa> EmailsPessoas { get; set; }
+        public DbSet<EnderecoPessoa> EnderecosPessoas { get; set; }
+        public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Estado> Estados { get; set; }
         public DbSet<Pais> Paises { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
