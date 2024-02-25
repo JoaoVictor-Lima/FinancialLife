@@ -1,12 +1,14 @@
-﻿namespace FinancialLifeDomain.Entities.Nucleo.Pessoas
+﻿using FinancialLifeDomain.Interfaces.EntitiesInterface.Nucleo.Pessoas;
+
+namespace FinancialLifeDomain.Entities.Nucleo.Pessoas
 {
     public class PessoaFisica : Pessoa
     {
         public int Id { get; set; }
-        public new string Nome => NomeRazaoSocial;
-        public new DateTime DataNascimento => DataNascimentoAberturaCnpj;
-        public string Cpf { get; set; }
-        public Pessoa Pessoa { get; set; }
-
+        public string Nome { get; private set; }
+        public DateTime DataNascimento { get; private set; }
+        public string Cpf { get; private set; }
+        public int IdGeneroPessoa { get; private set; }
+        public GeneroPessoa GeneroPessoa { get; private set; }
     }
 }

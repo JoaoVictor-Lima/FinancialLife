@@ -11,19 +11,36 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
             //Table
             builder.ToTable("PessoaFisica");
 
-            //Property
+            //Primary Key
+            builder.HasBaseType<Pessoa>();
+
+            //Property and table
             builder.Property(x => x.Id)
                 .IsRequired()
-                .HasColumnName("Id");
+                .HasColumnName("Id")
+                .HasColumnType("int");
+
+            builder.Property(x => x.Nome)
+                .IsRequired()
+                .HasColumnName("Nome")
+                .HasColumnType("varchar")
+                .HasMaxLength(300);
+
+            builder.Property(x => x.DataNascimento)
+                .IsRequired()
+                .HasColumnName("DataNascimento")
+                .HasColumnType("date");
 
             builder.Property(x => x.Cpf)
                 .IsRequired()
-                .HasColumnName("Cpf");
+                .HasColumnName("Cpf")
+                .HasColumnType("varchar")
+                .HasMaxLength(11);
 
             //Relationship
-            builder.HasOne(x => x.Pessoa)
-                .WithOne(y => y.PessoaFisica)
-                .HasForeignKey<PessoaFisica>(x => x.Id);
+            builder.HasOne(x => x.GeneroPessoa)
+                .WithOne()
+                .HasForeignKey<PessoaFisica>(x => x.IdGeneroPessoa);
 
         }
     }

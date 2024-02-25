@@ -1,9 +1,11 @@
 ﻿using FinancialLifeDomain.Entities.Nucleo.Pessoas;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FinancialLifeApplication.Intrefaces.Nucleo.Pessoas
 {
     public interface IPessoaFisicaAppService
     {
-        Task<IEnumerable<PessoaFisica>> GetAllPessoasFisicas();
+        Task<IEnumerable<PessoaFisica>> GetAllAsync();
     }
 }

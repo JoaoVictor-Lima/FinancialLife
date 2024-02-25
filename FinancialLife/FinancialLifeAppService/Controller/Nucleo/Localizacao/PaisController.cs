@@ -1,8 +1,10 @@
 ﻿using FinancialLifeApplication.Intrefaces.Nucleo.Localizacao;
 using FinancialLifeDomain.Entities.Nucleo.Localizacao;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace FrontEdn.Server.Controller.Nucleo.Localizacao
+namespace FinancialLifeApplication.Controller.Nucleo.Localizacao
 {
     [Route("Api/v1/[controller]/[action]")]
     public class PaisController : ControllerBase
@@ -17,9 +19,9 @@ namespace FrontEdn.Server.Controller.Nucleo.Localizacao
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Pais>> GetAllPaises()
+        public async Task<IEnumerable<Pais>> GetAllAsync()
         {
-            return await _paisAppService.GetAllPaises();
+            return await _paisAppService.GetAllAsync();
         }
     }
 }

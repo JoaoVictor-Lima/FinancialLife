@@ -1,6 +1,8 @@
 ﻿using FinancialLifeApplication.Intrefaces.Nucleo.Localizacao;
 using FinancialLifeDomain.Entities.Nucleo.Localizacao;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Localizacao;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FinancialLifeApplication.Services.Nucleo.Localizacao
 {
@@ -13,7 +15,7 @@ namespace FinancialLifeApplication.Services.Nucleo.Localizacao
             _paisRepository = paisRepository;
         }
 
-        public async Task<IEnumerable<Pais>> GetAllPaises()
+        public async Task<IEnumerable<Pais>> GetAllAsync()
         {
             return await _paisRepository.GetAll();
         }

@@ -4,28 +4,27 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
 {
-    public class PessoaJuridicaMap : IEntityTypeConfiguration<PessoaJuridica>
+    public class GeneroPessoaMap : IEntityTypeConfiguration<GeneroPessoa>
     {
-        public void Configure(EntityTypeBuilder<PessoaJuridica> builder)
+        public void Configure(EntityTypeBuilder<GeneroPessoa> builder)
         {
-            //Taable
-            builder.ToTable("PessoaJuridica");
+            //Table
+            builder.ToTable("GeneroPessoa");
 
             //Primary Key
-            builder.HasBaseType<Pessoa>();
+            builder.HasKey(x => x.Id);
 
-            //Property
+            //Propety
             builder.Property(x => x.Id)
                 .IsRequired()
                 .HasColumnName("Id")
                 .HasColumnType("int");
 
-            builder.Property(x => x.RazaoSocial)
+            builder.Property(x => x.Descricao)
                 .IsRequired()
-                .HasColumnName("RazaoSocial")
+                .HasColumnName("Descricao")
                 .HasColumnType("varchar")
-                .HasMaxLength(300);
-           
+                .HasMaxLength(100);
         }
     }
 }
