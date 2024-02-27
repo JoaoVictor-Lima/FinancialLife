@@ -5,7 +5,7 @@ import App from './App.jsx';
 import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
 
 //Paginas
-import Home from './routes/Home.jsx';
+import Home from './routes/Home/Home/Home.jsx';
 
 import './index.css';
 
