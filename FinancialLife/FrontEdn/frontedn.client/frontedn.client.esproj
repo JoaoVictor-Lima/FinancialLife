@@ -9,6 +9,6 @@
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist</PublishAssetsDirectory>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\routes\Home\NewFolder\" />
+    <Folder Include="src\routes\Login\Style\" />
   </ItemGroup>
 </Project>

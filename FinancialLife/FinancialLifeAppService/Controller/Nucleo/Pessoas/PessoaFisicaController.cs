@@ -1,4 +1,4 @@
-﻿using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
+﻿using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -9,16 +9,21 @@ namespace FinancialLifeApplication.Controller.Nucleo.Pessoas
     [Route("Api/v1/[controller]/[action]")]
     public class PessoaFisicaController : ControllerBase
     {
-        private readonly IPessoaFisicaAppService _pessoaFisicaAppService;
+        private readonly IPessoaFisicaAppService _appService;
 
-        public PessoaFisicaController(IPessoaFisicaAppService pessoaFisicaAppService)
+        public PessoaFisicaController(IPessoaFisicaAppService appService)
         {
-            _pessoaFisicaAppService = pessoaFisicaAppService;
+            _appService = appService;
+        }
+
+        public async Task<PessoaFisica> CreateAsync(PessoaFisica entity)
+        {
+            return await _appService.Create(entity);
         }
 
         public async Task<IEnumerable<PessoaFisica>> GetAllAsync()
         {
-            return await _pessoaFisicaAppService.GetAllAsync();
+            return await _appService.GetAllAsync();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using FinancialLifeApplication.Intrefaces.Nucleo.Localizacao;
+﻿using FinancialLifeApplication.Interfaces.Nucleo.Localizacao;
 using FinancialLifeDomain.Entities.Nucleo.Localizacao;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Localizacao;
 using System.Collections.Generic;

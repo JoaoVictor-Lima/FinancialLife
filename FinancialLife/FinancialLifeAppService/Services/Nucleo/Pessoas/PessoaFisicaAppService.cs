@@ -1,4 +1,4 @@
-﻿using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
+﻿using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
 using System.Collections.Generic;
@@ -8,15 +8,20 @@ namespace FinancialLifeApplication.Services.Nucleo.Pessoas
 {
     public class PessoaFisicaAppService : IPessoaFisicaAppService
     {
-        private readonly IPessoaFisicaRepository _pessoaFisicaRepository;
+        private readonly IPessoaFisicaRepository _repository;
 
-        public PessoaFisicaAppService(IPessoaFisicaRepository pessoaFisicaRepository)
+        public PessoaFisicaAppService(IPessoaFisicaRepository repository)
         {
-            _pessoaFisicaRepository = pessoaFisicaRepository;
+            _repository = repository;
         }
+        public async Task<PessoaFisica> Create(PessoaFisica entity)
+        {
+            return await _repository.Create(entity);
+        }
+
         public async Task<IEnumerable<PessoaFisica>> GetAllAsync()
         {
-            return await _pessoaFisicaRepository.GetAll();
+            return await _repository.GetAll();
         }
     }
 }

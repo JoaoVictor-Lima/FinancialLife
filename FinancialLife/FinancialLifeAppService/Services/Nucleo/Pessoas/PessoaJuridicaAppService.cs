@@ -1,4 +1,4 @@
-﻿using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
+﻿using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
 
 namespace FinancialLifeApplication.Services.Nucleo.Pessoas
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FinancialLifeApplication.Intrefaces.Nucleo.Localizacao
+namespace FinancialLifeApplication.Interfaces.Nucleo.Localizacao
 {
     public interface IPaisAppService
     {

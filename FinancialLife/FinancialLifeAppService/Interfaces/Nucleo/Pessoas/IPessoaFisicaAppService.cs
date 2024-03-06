@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FinancialLifeApplication.Intrefaces.Nucleo.Pessoas
+namespace FinancialLifeApplication.Interfaces.Nucleo.Pessoas
 {
     public interface IPessoaFisicaAppService
     {
+        Task<PessoaFisica> Create(PessoaFisica entity);
         Task<IEnumerable<PessoaFisica>> GetAllAsync();
     }
 }

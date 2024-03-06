@@ -1,6 +1,6 @@
 using FinancialLifeApplication;
-using FinancialLifeApplication.Intrefaces.Nucleo.Localizacao;
-using FinancialLifeApplication.Intrefaces.Nucleo.Pessoas;
+using FinancialLifeApplication.Interfaces.Nucleo.Localizacao;
+using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
 using FinancialLifeApplication.Services.Nucleo.Localizacao;
 using FinancialLifeApplication.Services.Nucleo.Pessoas;
 using FinancialLifeDomain.Interfaces.Repository.Nucleo.Localizacao;
