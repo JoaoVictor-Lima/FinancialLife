@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\FinancialLifeAppService\FinancialLifeApplication.csproj" />
     <ProjectReference Include="..\..\FinancialLifeInfrastructureData\FinancialLifeInfrastructureData.csproj" />
-    <ProjectReference Include="..\frontedn.client\frontedn.client.esproj">
+    <ProjectReference Include="..\frontedn.client\frontend.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
 import SaveButton from '../../Buttons/SaveButton/SaveButton'
 
+
 const handleChange = (event, setFormData, formData) => {
   const { name, value } = event.target;
   setFormData({ ...formData, [name]: value });
 };
 
-const handleSubmit = (event, onSubmit, formData) => {
+const handleSubmit = (event) => {
   event.preventDefault();
-  onSubmit(formData);
 };
 
-const DefaultForm = ({campos, onSubmit, onCancel, children}) => {
+const DefaultForm = ({fields, url, method, className}) => {
   const [formData, setFormData] = useState({});
 
   const handleFormChange = (event) => handleChange(event, setFormData, formData);
-  const handleFormSubmit = (event) => handleSubmit(event, onSubmit, formData);
+  const handleFormSubmit = (event) => handleSubmit(event);
 
   return (
     <form onSubmit={handleFormSubmit}>
-        {campos.map((campo, index) => (
+        {fields.map((field, index) => (
           <div key={index}>
-              <label htmlFor={campo.name}>{campo.label}</label>
+              <label htmlFor={field.name}>{field.label}</label>
               <input 
-                type={campo.type}
-                id={campo.name}
-                name={campo.name}
-                value={formData[campo.name] || '' }
+                type={field.type}
+                id={field.name}
+                name={field.name}
+                value={formData[field.name] || '' }
                 onChange={handleFormChange}/>
           </div>
         ))}
-        <SaveButton onClick={handleSubmit}/>
+        <SaveButton url={url} data={formData} method={method} />
     </form>
   )
 }

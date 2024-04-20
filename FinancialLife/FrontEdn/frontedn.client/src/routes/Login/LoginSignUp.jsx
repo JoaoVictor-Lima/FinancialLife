@@ -1,14 +1,20 @@
 import React from 'react'
-import DefaultForm from '../../Core/Componets/Forms/DefaultForm/DefaultForm'
+import SignUpForm from '../../Core/Componets/Forms/SignUpForm/SignUpForm'
 
 const LoginSignUp = () => {
-  const campos = [
-    {name: 'username', label: 'Username', type: 'text'},
-  ]
-  return (
-    <DefaultForm campos={campos}>
 
-    </DefaultForm>
+  const items = {
+    url: 'Cadastro',
+    fields:  [
+      {name: 'username', label: 'Username', type: 'text'},
+      {name: 'Password', label: 'Password', type: 'password'},
+      {name: 'Nome', label: 'Nome', type: 'text'},
+      {name: 'LeriGo', label: 'LeriGo', type: 'text'},
+    ],
+  }
+
+  return (
+    <SignUpForm {...items} />
   )
 }
 
