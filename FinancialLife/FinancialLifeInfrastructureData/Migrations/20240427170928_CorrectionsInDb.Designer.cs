@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinancialLifeInfrastructureData.Migrations
 {
     [DbContext(typeof(FinancialLifeDbContext))]
-    [Migration("20240225151400_PessoaContextCompleat")]
-    partial class PessoaContextCompleat
+    [Migration("20240427170928_CorrectionsInDb")]
+    partial class CorrectionsInDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -257,6 +257,36 @@ namespace FinancialLifeInfrastructureData.Migrations
                     b.ToTable("TelefonePessoa", (string)null);
                 });
 
+            modelBuilder.Entity("FinancialLifeDomain.Entities.Nucleo.Usuarios.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("EmailLogin")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar")
+                        .HasColumnName("EmailLogin");
+
+                    b.Property<int>("IdPessoaFisica")
+                        .HasColumnType("int")
+                        .HasColumnName("IdPessoaFisica");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar")
+                        .HasColumnName("Senha");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuario", (string)null);
+                });
+
             modelBuilder.Entity("FinancialLifeDomain.Entities.Nucleo.Pessoas.PessoaFisica", b =>
                 {
                     b.HasBaseType("FinancialLifeDomain.Entities.Nucleo.Pessoas.Pessoa");
@@ -272,7 +302,8 @@ namespace FinancialLifeInfrastructureData.Migrations
                         .HasColumnName("DataNascimento");
 
                     b.Property<int>("IdGeneroPessoa")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("IdGeneroPessoa");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -305,7 +336,7 @@ namespace FinancialLifeInfrastructureData.Migrations
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Localizacao.Estado", "Estado")
                         .WithMany("Cidades")
                         .HasForeignKey("IdEstado")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Estado");
@@ -316,7 +347,7 @@ namespace FinancialLifeInfrastructureData.Migrations
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Localizacao.Pais", "Pais")
                         .WithMany("Estados")
                         .HasForeignKey("IdPais")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Pais");
@@ -325,9 +356,9 @@ namespace FinancialLifeInfrastructureData.Migrations
             modelBuilder.Entity("FinancialLifeDomain.Entities.Nucleo.Pessoas.EmailPessoa", b =>
                 {
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Pessoas.Pessoa", "Pessoa")
-                        .WithMany()
+                        .WithMany("EmailsPessoa")
                         .HasForeignKey("IdPessoa")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Pessoa");
@@ -338,25 +369,25 @@ namespace FinancialLifeInfrastructureData.Migrations
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Localizacao.Cidade", "Cidade")
                         .WithMany()
                         .HasForeignKey("IdCidade")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Localizacao.Estado", "Estado")
                         .WithMany()
                         .HasForeignKey("IdEstado")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Localizacao.Pais", "Pais")
                         .WithMany()
                         .HasForeignKey("IdPais")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Pessoas.Pessoa", "Pessoa")
-                        .WithMany()
+                        .WithMany("EnderecosPessoa")
                         .HasForeignKey("IdPessoa")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Cidade");
@@ -371,9 +402,9 @@ namespace FinancialLifeInfrastructureData.Migrations
             modelBuilder.Entity("FinancialLifeDomain.Entities.Nucleo.Pessoas.TelefonePessoa", b =>
                 {
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Pessoas.Pessoa", "Pessoa")
-                        .WithMany()
+                        .WithMany("TelefonesPessoa")
                         .HasForeignKey("IdPessoa")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Pessoa");
@@ -390,7 +421,7 @@ namespace FinancialLifeInfrastructureData.Migrations
                     b.HasOne("FinancialLifeDomain.Entities.Nucleo.Pessoas.GeneroPessoa", "GeneroPessoa")
                         .WithOne()
                         .HasForeignKey("FinancialLifeDomain.Entities.Nucleo.Pessoas.PessoaFisica", "IdGeneroPessoa")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("GeneroPessoa");
@@ -413,6 +444,15 @@ namespace FinancialLifeInfrastructureData.Migrations
             modelBuilder.Entity("FinancialLifeDomain.Entities.Nucleo.Localizacao.Pais", b =>
                 {
                     b.Navigation("Estados");
+                });
+
+            modelBuilder.Entity("FinancialLifeDomain.Entities.Nucleo.Pessoas.Pessoa", b =>
+                {
+                    b.Navigation("EmailsPessoa");
+
+                    b.Navigation("EnderecosPessoa");
+
+                    b.Navigation("TelefonesPessoa");
                 });
 #pragma warning restore 612, 618
         }

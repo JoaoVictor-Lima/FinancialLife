@@ -15,6 +15,7 @@ namespace FinancialLifeApplication.Controller.Nucleo.Usuarios
             _appService = appService;
         }
 
+        [HttpPost]
         public async Task<Usuario> CreateAsync(Usuario entity)
         {
             return await _appService.CreateAsync(entity);

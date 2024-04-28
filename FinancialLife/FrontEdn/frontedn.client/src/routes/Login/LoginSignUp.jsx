@@ -4,7 +4,7 @@ import SignUpForm from '../../Core/Componets/Forms/SignUpForm/SignUpForm'
 const LoginSignUp = () => {
 
   const items = {
-    url: 'Cadastro',
+    url: 'Api/v1/PessoaFisica/GetAll',
     fields:  [
       {name: 'username', label: 'Username', type: 'text'},
       {name: 'Password', label: 'Password', type: 'password'},

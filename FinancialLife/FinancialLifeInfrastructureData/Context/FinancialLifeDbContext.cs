@@ -11,9 +11,9 @@ namespace FinancialLifeInfrastructureData.Context
             : base(options)
         {
         }
+
         public DbSet<PessoaFisica> PessoasFisicas { get; set; }
         public DbSet<PessoaJuridica> PessoasJuridicas { get; set; }
-        public DbSet<GeneroPessoa> GenereroPessoas { get; set; }
         public DbSet<TelefonePessoa> TelefonesPessoas { get; set; }
         public DbSet<EmailPessoa> EmailsPessoas { get; set; }
         public DbSet<EnderecoPessoa> EnderecosPessoas { get; set; }
@@ -25,6 +25,9 @@ namespace FinancialLifeInfrastructureData.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            //Configuração para evitar por padrão deleções em casacata
+            modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()).ToList().ForEach(x => x.DeleteBehavior = DeleteBehavior.Restrict);
         }
     }
 }

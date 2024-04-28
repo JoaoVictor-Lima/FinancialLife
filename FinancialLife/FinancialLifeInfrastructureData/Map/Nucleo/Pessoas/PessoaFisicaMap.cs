@@ -37,10 +37,10 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
                 .HasColumnType("varchar")
                 .HasMaxLength(11);
 
-            //Relationship
-            builder.HasOne(x => x.GeneroPessoa)
-                .WithOne()
-                .HasForeignKey<PessoaFisica>(x => x.IdGeneroPessoa);
+            builder.Property(x => x.IdGeneroPessoa)
+                .IsRequired()
+                .HasColumnName("IdGeneroPessoa")
+                .HasColumnType("int");
 
         }
     }

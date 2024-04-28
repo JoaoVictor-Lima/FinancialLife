@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ContractEntity\ContractEntity.csproj" />
+    <ProjectReference Include="..\FinacialLifeDtos\FinacialLifeDtos.csproj" />
+  </ItemGroup>
+
 </Project>

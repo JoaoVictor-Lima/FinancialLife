@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FinacialLifeDtos\FinacialLifeDtos.csproj" />
     <ProjectReference Include="..\FinancialLifeDomain\FinancialLifeDomain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataTranferObject\" />
   </ItemGroup>
 
   <ItemGroup>

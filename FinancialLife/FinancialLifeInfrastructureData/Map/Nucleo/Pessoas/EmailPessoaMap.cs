@@ -30,11 +30,6 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
                 .IsRequired()
                 .HasColumnType("int")
                 .HasColumnName("IdPessoa");
-
-            //Relationship
-            builder.HasOne(x => x.Pessoa)
-                .WithMany()
-                .HasForeignKey(x => x.IdPessoa);
         }
     }
 }

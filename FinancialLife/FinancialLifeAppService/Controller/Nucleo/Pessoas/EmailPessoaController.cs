@@ -14,6 +14,7 @@ namespace FinancialLifeApplication.Controller.Nucleo.Pessoas
             _appService = appService;
         }
 
+        [HttpPost]
         public async Task<EmailPessoa> CreateAsync(EmailPessoa entity)
         {
             return await _appService.CreateAsync(entity);

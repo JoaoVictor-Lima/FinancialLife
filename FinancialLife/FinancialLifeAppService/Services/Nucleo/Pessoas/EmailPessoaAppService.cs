@@ -16,7 +16,7 @@ namespace FinancialLifeApplication.Services.Nucleo.Pessoas
 
         public async Task<EmailPessoa> CreateAsync(EmailPessoa entity)
         {
-            return await _repository.Create(entity);
+            return await _repository.Flush(entity);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
+﻿using FinacialLifeDtos.Nucleo.Pessoas;
+using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
 using FinancialLifeDomain.Entities.Nucleo.Pessoas;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace FinancialLifeApplication.Controller.Nucleo.Pessoas
             _appService = appService;
         }
 
-        public async Task<PessoaFisica> CreateAsync(PessoaFisica entity)
+        [HttpPost]
+        public async Task<PessoaFisica> CreateAsync([FromBody]PessoaFisicaDto dto)
         {
-            return await _appService.Create(entity);
+            return await _appService.Create(dto);
         }
 
+        [HttpGet]
         public async Task<IEnumerable<PessoaFisica>> GetAllAsync()
         {
             return await _appService.GetAllAsync();

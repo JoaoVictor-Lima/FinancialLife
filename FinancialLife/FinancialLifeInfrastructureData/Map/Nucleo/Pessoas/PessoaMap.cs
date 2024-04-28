@@ -10,6 +10,22 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
         {
             //Primary Key
             builder.HasKey(x => x.Id);
+
+            //relationship
+            builder.HasMany(x => x.EmailsPessoa)
+                .WithOne()
+                .HasForeignKey(x => x.IdPessoa)
+                .IsRequired();
+
+            builder.HasMany(x => x.TelefonesPessoa)
+                .WithOne()
+                .HasForeignKey(x => x.IdPessoa)
+                .IsRequired();
+
+            builder.HasMany(x => x.EnderecosPessoa)
+                .WithOne()
+                .HasForeignKey(x => x.IdPessoa)
+                .IsRequired();
         }
     }
 }

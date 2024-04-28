@@ -17,7 +17,7 @@ namespace FinancialLifeApplication.Services.Nucleo.Usuarios
 
         public async Task<Usuario> CreateAsync(Usuario entity)
         {
-            return await _repository.Create(entity);
+            return await _repository.Flush(entity);
         }
     }
 }

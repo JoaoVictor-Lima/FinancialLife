@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinancialLifeInfrastructureData.Migrations
 {
     /// <inheritdoc />
-    public partial class PessoaContextCompleat : Migration
+    public partial class CorrectionsInDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -50,6 +50,21 @@ namespace FinancialLifeInfrastructureData.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Usuario",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmailLogin = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false),
+                    Senha = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
+                    IdPessoaFisica = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuario", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Estado",
                 columns: table => new
                 {
@@ -66,7 +81,8 @@ namespace FinancialLifeInfrastructureData.Migrations
                         name: "FK_Estado_Pais_IdPais",
                         column: x => x.IdPais,
                         principalTable: "Pais",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -86,7 +102,7 @@ namespace FinancialLifeInfrastructureData.Migrations
                         column: x => x.IdPessoa,
                         principalTable: "Pessoa",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -107,7 +123,7 @@ namespace FinancialLifeInfrastructureData.Migrations
                         column: x => x.IdGeneroPessoa,
                         principalTable: "GeneroPessoa",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_PessoaFisica_Pessoa_Id",
                         column: x => x.Id,
@@ -152,7 +168,7 @@ namespace FinancialLifeInfrastructureData.Migrations
                         column: x => x.IdPessoa,
                         principalTable: "Pessoa",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -171,7 +187,8 @@ namespace FinancialLifeInfrastructureData.Migrations
                         name: "FK_Cidade_Estado_IdEstado",
                         column: x => x.IdEstado,
                         principalTable: "Estado",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -197,25 +214,25 @@ namespace FinancialLifeInfrastructureData.Migrations
                         column: x => x.IdCidade,
                         principalTable: "Cidade",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_EnderecoPessoa_Estado_IdEstado",
                         column: x => x.IdEstado,
                         principalTable: "Estado",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_EnderecoPessoa_Pais_IdPais",
                         column: x => x.IdPais,
                         principalTable: "Pais",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_EnderecoPessoa_Pessoa_IdPessoa",
                         column: x => x.IdPessoa,
                         principalTable: "Pessoa",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -283,6 +300,9 @@ namespace FinancialLifeInfrastructureData.Migrations
 
             migrationBuilder.DropTable(
                 name: "TelefonePessoa");
+
+            migrationBuilder.DropTable(
+                name: "Usuario");
 
             migrationBuilder.DropTable(
                 name: "Cidade");

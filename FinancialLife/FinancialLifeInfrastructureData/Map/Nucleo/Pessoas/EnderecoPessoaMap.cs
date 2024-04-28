@@ -62,11 +62,9 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
                 .HasColumnName("IdPessoa");
 
             //Relationship
-
             builder.HasOne(x => x.Cidade)
                 .WithMany()
                 .HasForeignKey(x => x.IdCidade);
-
 
             builder.HasOne(x => x.Estado)
                 .WithMany()
@@ -76,11 +74,6 @@ namespace FinancialLifeInfrastructureData.Map.Nucleo.Pessoas
             builder.HasOne(x => x.Pais)
                 .WithMany()
                 .HasForeignKey(x => x.IdPais);
-
-            builder.HasOne(x => x.Pessoa)
-                .WithMany()
-                .HasForeignKey(x => x.IdPessoa);
-
         }
     }
 }
