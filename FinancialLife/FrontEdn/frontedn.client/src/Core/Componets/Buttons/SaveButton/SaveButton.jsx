@@ -8,6 +8,7 @@ const handleClick = async (url, data, method) => {
       let response;
       if (method === HttpMethodEnum.POST) 
       {
+        console.log(data);
         response = await api.post(url, data);
       } 
       else if (method === HttpMethodEnum.PUT) 
@@ -20,8 +21,8 @@ const handleClick = async (url, data, method) => {
       }
     }
     catch (error){
-      console.log(error)
-        //Criar mensagem na tela retornando o erro e a mensagem do erro para que seja enviada ao desenvolvedor
+      console.error('Erro na chamada da API:', error);
+      alert('Falha na operação: ' + error.message); 
     }
 }
 

@@ -1,0 +1,57 @@
+/* DefaultForm.css */
+
+.default-form {
+    max-width: 1000px;
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Empilha os campos e os botões verticalmente */
+    justify-content: space-between; /* Garante que os botões fiquem na parte inferior */
+    position: relative; /* Para posicionamento absoluto dos botões, se necessário */
+}
+
+.default-form .fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 20px;
+}
+
+.default-form fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.default-form legend {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.default-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.default-form input[type="text"],
+.default-form input[type="number"],
+.default-form input[type="email"],
+.default-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.default-form .buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
