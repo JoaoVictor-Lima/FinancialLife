@@ -22,7 +22,6 @@ namespace FinancialLifeApplication.Controller.Nucleo.Pessoas
         public async Task<PessoaFisica> CreateAsync([FromBody] PessoaFisicaDto dto)
         {
             return await _appService.Create(dto);
-            //return await _appService.Create(dto);
         }
 
         [HttpGet]
