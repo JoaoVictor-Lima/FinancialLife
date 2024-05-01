@@ -7,7 +7,7 @@ trigger:
 - Deployment
 
 pool:
-  vmImage: 'windows-latest'
+  name: Default
 
 variables:
   solution: '**/*.sln'
