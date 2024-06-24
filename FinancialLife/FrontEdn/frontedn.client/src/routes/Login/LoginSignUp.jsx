@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
 import SignUpForm from '../../Core/Componets/Forms/SignUpForm/SignUpForm'
 import './Style/LoginSignUp.css'
+
+
+
+const ConfigResposta = (data) => {
+  //setResponseData(data)
+}
 
 const LoginSignUp = () => {
 
   const items = {
     url: 'PessoaFisica/Create',
-    layout: 'column',
-    className: 'default-form form',
+    className: 'default-form',
+    onSuccess: ConfigResposta(),
     fields:  [
       {
         name: 'Nome', 
@@ -56,7 +62,7 @@ const LoginSignUp = () => {
           {
             name: 'Email', 
             Id: 'Email', 
-            label: 'E-mail', 
+            label: 'E-mail Login', 
             type: 'text'
           },
         ]

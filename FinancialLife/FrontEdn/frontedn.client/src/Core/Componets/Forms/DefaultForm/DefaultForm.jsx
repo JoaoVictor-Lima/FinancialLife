@@ -60,8 +60,9 @@ const handleSubmit = (event) => {
   event.preventDefault();
 };
 
-const DefaultForm = ({fields, url, model, method, className}) => {
+const DefaultForm = ({fields, url, model, method, className, onSuccess}) => {
   const [formData, setFormData] = useState({});
+  const [reponseData, setResposeData] = useState({});
 
   const handleFormChange = (event) => handleChange(event, setFormData);
   const handleFormSubmit = (event) => handleSubmit(event);
@@ -72,7 +73,12 @@ const DefaultForm = ({fields, url, model, method, className}) => {
         {renderFields(fields, formData, handleFormChange)}
       </div>
         <div className='buttons'>
-          <SaveButton url={url} data={formData} method={method} model={model} />
+          <SaveButton 
+          url={url} 
+          data={formData} 
+          method={method} 
+          model={model} 
+          onSuccess={setResposeData} />
         </div>
     </form>
   )

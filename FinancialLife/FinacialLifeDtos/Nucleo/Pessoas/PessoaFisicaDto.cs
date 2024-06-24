@@ -1,4 +1,5 @@
 ﻿using ContractEntity.Enums.Nucleo.Pessoas.PessoaFisica;
+using FinacialLifeDtos.Nucleo.Usuarios;
 
 namespace FinacialLifeDtos.Nucleo.Pessoas
 {
@@ -12,5 +13,6 @@ namespace FinacialLifeDtos.Nucleo.Pessoas
         public TelefonePessoaDto TelefonePessoa { get; set; }
         public EmailPessoaDto EmailPessoa { get; set; }
         public EnderecoPessoaDto EnderecoPessoa { get; set; }
+        public UsuarioDto Usuario { get; set; }
     }
 }

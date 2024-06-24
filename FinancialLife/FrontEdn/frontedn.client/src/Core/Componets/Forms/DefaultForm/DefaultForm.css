@@ -9,9 +9,9 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     display: flex;
-    flex-direction: column; /* Empilha os campos e os botões verticalmente */
-    justify-content: space-between; /* Garante que os botões fiquem na parte inferior */
-    position: relative; /* Para posicionamento absoluto dos botões, se necessário */
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
 
 .default-form .fields {
