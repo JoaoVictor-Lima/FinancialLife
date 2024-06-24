@@ -25,7 +25,7 @@ namespace FinancialLifeInfrastructureData.Repository
         {
             return await _context.Set<TEntity>().FindAsync(id);
         }
-        private async Task<TEntity> Create<TEntity>(TEntity entity) where TEntity : class
+        public async Task<TEntity> Create<TEntity>(TEntity entity) where TEntity : class
         {
             await _context.Set<TEntity>().AddAsync(entity);
             await _context.SaveChangesAsync();

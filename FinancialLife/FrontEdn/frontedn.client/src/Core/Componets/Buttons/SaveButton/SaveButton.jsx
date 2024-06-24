@@ -3,7 +3,7 @@ import DefaultButton from '../DefaultButton/DefaultButton.jsx'
 import api from '../../../Utils/Api/axios'
 import { HttpMethodEnum } from '../../../Utils/Enums/HttpMethodEnum.js'
 
-const handleClick = async (url, data, method) => {
+const handleClick = async (url, data, method, onSuccess, onError) => {
     try{
       let response;
       if (method === HttpMethodEnum.POST) 
@@ -18,18 +18,22 @@ const handleClick = async (url, data, method) => {
       {
         throw new Error('Método HTTP inválido');
       }
+
+      if (onSuccess) {
+        onSuccess(response.data);
+      }
     }
     catch (error){
-      console.log(error)
-        //Criar mensagem na tela retornando o erro e a mensagem do erro para que seja enviada ao desenvolvedor
+      console.error('Erro na chamada da API:', error);
+      alert('Falha na operação: ' + error.message); 
     }
 }
 
-const SaveButton = ({url, data, method, className}) => {
+const SaveButton = ({url, data, method, className, onSuccess, onError}) => {
 
   return (
     <DefaultButton
-    onClick={() => handleClick(url, data, method)}
+    onClick={() => handleClick(url, data, method, onSuccess, onError)}
     className={className}>
         Salvar
     </DefaultButton>
