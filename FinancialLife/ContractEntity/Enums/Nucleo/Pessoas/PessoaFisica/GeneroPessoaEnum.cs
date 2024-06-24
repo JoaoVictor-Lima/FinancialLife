@@ -2,7 +2,7 @@
 
 namespace ContractEntity.Enums.Nucleo.Pessoas.PessoaFisica
 {
-    public enum GeneroPessoaEnum
+    public enum GeneroPessoaEnum : int
     {
         [Description("Masculino")]
         Masculino = -1,

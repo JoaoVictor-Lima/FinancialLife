@@ -24,7 +24,6 @@ namespace FinancialLifeDomain.Factories.Nucleo.Pessoas
         public override PessoaFisica Create(PessoaFisicaDto dto)
         {
             var entity = new PessoaFisica();
-
             entity.AddNome(dto.Nome);
             entity.AddCpf(dto.Cpf);
             entity.AddDataNascimento(dto.DataNascimento);

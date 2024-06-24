@@ -16,6 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +35,14 @@ builder.Services.AddScoped<IFactory<EnderecoPessoa, EnderecoPessoaDto>, Endereco
 
 
 builder.Services.AddControllers()
-    .AddApplicationPart(typeof(FinancialLifeApplicationAssemblyReference).Assembly);
+    .AddApplicationPart(typeof(FinancialLifeApplicationAssemblyReference).Assembly)
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.NumberHandling =
+            JsonNumberHandling.AllowReadingFromString | JsonNumberHandling.WriteAsString;
+
+        options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    });
 
 //Contexts
 builder.Services.AddDbContext<FinancialLifeDbContext>(options =>
@@ -43,6 +51,7 @@ builder.Services.AddDbContext<FinancialLifeDbContext>(options =>
     options.UseLoggerFactory(LoggerFactory.Create(builder => builder.AddDebug()));
     options.EnableSensitiveDataLogging(); 
 });
+          
 
 
 //SwaggerConfig
