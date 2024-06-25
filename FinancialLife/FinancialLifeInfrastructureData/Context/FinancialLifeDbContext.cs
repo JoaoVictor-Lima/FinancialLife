@@ -1,5 +1,5 @@
-﻿using FinancialLifeDomain.Entities.Nucleo.Localizacao;
-using FinancialLifeDomain.Entities.Nucleo.Pessoas;
+﻿using FinancialLifeDomain.Entities.Core.Location;
+using FinancialLifeDomain.Entities.Core.People;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -12,14 +12,14 @@ namespace FinancialLifeInfrastructureData.Context
         {
         }
 
-        public DbSet<PessoaFisica> PessoasFisicas { get; set; }
-        public DbSet<PessoaJuridica> PessoasJuridicas { get; set; }
-        public DbSet<TelefonePessoa> TelefonesPessoas { get; set; }
-        public DbSet<EmailPessoa> EmailsPessoas { get; set; }
-        public DbSet<EnderecoPessoa> EnderecosPessoas { get; set; }
-        public DbSet<Cidade> Cidades { get; set; }
-        public DbSet<Estado> Estados { get; set; }
-        public DbSet<Pais> Paises { get; set; }
+        public DbSet<NaturalPerson> PessoasFisicas { get; set; }
+        public DbSet<LegalEntity> PessoasJuridicas { get; set; }
+        public DbSet<PhonePerson> TelefonesPessoas { get; set; }
+        public DbSet<EmailPerson> EmailsPessoas { get; set; }
+        public DbSet<PersonAddress> EnderecosPessoas { get; set; }
+        public DbSet<City> Cidades { get; set; }
+        public DbSet<State> Estados { get; set; }
+        public DbSet<Country> Paises { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

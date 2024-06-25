@@ -11,7 +11,7 @@ const ConfigResposta = (data) => {
 const LoginSignUp = () => {
 
   const items = {
-    url: 'PessoaFisica/Create',
+    url: 'NaturalPerson/Create',
     className: 'default-form',
     onSuccess: ConfigResposta(),
     fields:  [

@@ -1,20 +1,18 @@
-using FinacialLifeDtos.Nucleo.Pessoas;
+using FinacialLifeDtos.Core.People;
 using FinancialLifeApplication;
-using FinancialLifeApplication.Interfaces.Nucleo.Localizacao;
-using FinancialLifeApplication.Interfaces.Nucleo.Pessoas;
-using FinancialLifeApplication.Services.Nucleo.Localizacao;
-using FinancialLifeApplication.Services.Nucleo.Pessoas;
+using FinancialLifeApplication.Interfaces.Core.Location;
+using FinancialLifeApplication.Interfaces.Core.People;
+using FinancialLifeApplication.Services.Core.Location;
+using FinancialLifeApplication.Services.Core.Person;
 using FinancialLifeDomain.Core.AbstractFactory;
-using FinancialLifeDomain.Entities.Nucleo.Pessoas;
-using FinancialLifeDomain.Factories.Nucleo.Pessoas;
-using FinancialLifeDomain.Interfaces.Repository.Nucleo.Localizacao;
-using FinancialLifeDomain.Interfaces.Repository.Nucleo.Pessoas;
+using FinancialLifeDomain.Entities.Core.People;
+using FinancialLifeDomain.Factories.Core.People;
+using FinancialLifeDomain.Interfaces.Repository.Core.Location;
+using FinancialLifeDomain.Interfaces.Repository.Core.People;
 using FinancialLifeInfrastructureData.Context;
-using FinancialLifeInfrastructureData.Repository.Nucleo.Localizacao;
-using FinancialLifeInfrastructureData.Repository.Nucleo.Pessoas;
+using FinancialLifeInfrastructureData.Repository.Core.Location;
+using FinancialLifeInfrastructureData.Repository.Core.People;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -22,16 +20,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddScoped<IPessoaFisicaAppService, PessoaFisicaAppService>();
-builder.Services.AddScoped<IPessoaFisicaRepository, PessoaFisicaRepository>();
+builder.Services.AddScoped<INaturalPersonAppService, NaturalPersonAppService>();
+builder.Services.AddScoped<INaturalPersonRepository, NaturalPersonRepository>();
 
-builder.Services.AddScoped<IPaisAppService, PaisAppService>();
-builder.Services.AddScoped<IPaisRepository, PaisRepository>();
+builder.Services.AddScoped<ICountryAppService, CountryAppService>();
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 
-builder.Services.AddScoped<IFactory<PessoaFisica, PessoaFisicaDto>, PessoaFisicaFactory>();
-builder.Services.AddScoped<IFactory<TelefonePessoa, TelefonePessoaDto>, TelefonePessoaFactory>();
-builder.Services.AddScoped<IFactory<EmailPessoa, EmailPessoaDto>, EmailPessoaFactory>();
-builder.Services.AddScoped<IFactory<EnderecoPessoa, EnderecoPessoaDto>, EnderecoPessoaFactory>();
+builder.Services.AddScoped<IFactory<NaturalPerson, NaturalPersonDto>, NaturalPersonFactory>();
+builder.Services.AddScoped<IFactory<PhonePerson, PhonePersonDto>, PhonePersonFactory>();
+builder.Services.AddScoped<IFactory<EmailPerson, EmailPersonDto>, EmailPersonFactory>();
+builder.Services.AddScoped<IFactory<PersonAddress, PersonAddressDto>, PersonAddressFactory>();
 
 
 builder.Services.AddControllers()

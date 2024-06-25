@@ -1,6 +1,4 @@
-﻿using FinancialLifeDomain.Core.AggregateRoot;
-
-namespace FinancialLifeDomain.Interfaces.Repository
+﻿namespace FinancialLifeDomain.Interfaces.Repository
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {
