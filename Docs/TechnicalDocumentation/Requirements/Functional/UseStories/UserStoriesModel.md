@@ -2,7 +2,7 @@
  Below is a model represented, with pratical exemples; this model should be used in all use case written in this project. This will ensure that all stories are well-written, 
  allowing for good documentation along with accelerated and correct software development.
 
-## Who, What, Why
+## AbreviateEpic(UI)-Code(001): NameUserStorie(Sign-up User)
 **As a** user of the financial management app.  
 **I want** to add a new expense.  
 **So that** I can record my daily expenditures in an organized manner.  
