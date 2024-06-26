@@ -1,6 +1,6 @@
 ## User Information
 
-### UC-001: Sign-up User
+### UI-001: Sign-up User
 
 **As a** user of the financial management app.  
 **I want** to register my profile.  
@@ -10,7 +10,7 @@
 - Should I add my login information.
 - Should I add my preferences.
 
-### UC-002: Sign-in
+### UI-002: Sign-in
 **As a** user of the financial management app.  
 **I want** to sign-in in this app.  
 **So that** I can view my dashboard and use the functionalities on the app.  
@@ -19,7 +19,7 @@
 - Should I can informate my login password.
 - I should be able to recover my password if I lose it.
 
-### UC-003: Edit Profile
+### UI-003: Edit Profile
 **As a** user of the financial management app.  
 **I want** to edit my prfile informations.  
 **So that** I can update my personal information.  
