@@ -3,9 +3,9 @@
  allowing for good documentation along with accelerated and correct software development.
 
 ## AbreviateEpic-Code: NameUserStorie
-**As a** 
-**I want** 
-**So that**  
+**As a**  
+**I want**   
+**So that**    
 
 ### Acceptance Criteria:
 - 
@@ -13,7 +13,7 @@
 
 # Exaple
 
-## AbreviateEpic-Code: NameUserStorie
+## UI-001: NameUserStorie
 **As a** user of the financial management app.  
 **I want** to add a new expense.  
 **So that** I can record my daily expenditures in an organized manner.  
