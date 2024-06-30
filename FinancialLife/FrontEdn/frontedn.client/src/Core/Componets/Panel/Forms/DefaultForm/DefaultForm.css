@@ -2,10 +2,9 @@
 
 .default-form {
     max-width: 1000px;
-    width: 70%;
     margin: 20px auto;
     padding: 20px;
-    background: #f8f9fa;
+    background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     display: flex;

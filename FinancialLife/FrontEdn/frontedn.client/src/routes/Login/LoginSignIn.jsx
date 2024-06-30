@@ -20,7 +20,7 @@ const LoginSignIn = () => {
   const confirmLogin = async () => {
     debugger
     const data = {email, password}
-    const response = await api.post('teste', data)
+    // const response = await api.post('teste', data)
   };
 
   return (
@@ -67,7 +67,7 @@ const LoginSignIn = () => {
               <input type="submit" value="Esqueci Minha Senha"/>
               <DefaultButton 
                 onClick={confirmLogin}
-                children={<div>Login</div>}
+                children={<Link to="/FinancialControl">Login</Link>}
              /> 
           </div>
         </div>

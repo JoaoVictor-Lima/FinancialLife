@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SignUpForm from '../../Core/Componets/Forms/SignUpForm/SignUpForm'
-import './Style/LoginSignUp.css'
+import SignUpForm from '../../Core/Componets/Panel/Forms/SignUpForm/SignUpForm.jsx';
+import './Style/LoginSignUp.css';
 
 
 
