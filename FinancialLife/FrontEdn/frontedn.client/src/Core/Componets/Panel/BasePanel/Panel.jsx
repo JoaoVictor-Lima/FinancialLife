@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Panel = () => {
+import './Panel.css' 
+
+const Panel = ({children, className, style, onClick }) => {
   return (
-    <div>
-      
+    <div className = {className ?? 'default-panel'}
+      style={style}
+      onClick={onClick}>
+      {children}
     </div>
   )
 }

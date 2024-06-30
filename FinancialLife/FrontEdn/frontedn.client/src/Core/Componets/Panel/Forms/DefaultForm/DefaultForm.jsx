@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import SaveButton from '../../Buttons/SaveButton/SaveButton';
-import formatValueByType from '../../../Utils/DataFormatting/FomartValueByType';
+import SaveButton from '../../../Buttons/SaveButton/SaveButton';
+import formatValueByType from '../../../../Utils/DataFormatting/FomartValueByType';
+import Panel from '../../BasePanel/Panel'
 
 import './DefaultForm.css'
 
@@ -68,19 +69,21 @@ const DefaultForm = ({fields, url, model, method, className, onSuccess}) => {
   const handleFormSubmit = (event) => handleSubmit(event);
 
   return (
-    <form onSubmit={handleFormSubmit} className={className ?? 'default-form'} >
-      <div className='fields'>
-        {renderFields(fields, formData, handleFormChange)}
-      </div>
-        <div className='buttons'>
-          <SaveButton 
-          url={url} 
-          data={formData} 
-          method={method} 
-          model={model} 
-          onSuccess={setResposeData} />
+    <Panel className={'default-panel'}>
+      <form onSubmit={handleFormSubmit} className={className ?? 'default-form'} >
+        <div className='fields'>
+          {renderFields(fields, formData, handleFormChange)}
         </div>
-    </form>
+          <div className='buttons'>
+            <SaveButton 
+            url={url} 
+            data={formData} 
+            method={method} 
+            model={model} 
+            onSuccess={setResposeData} />
+          </div>
+      </form>
+    </Panel>
   )
 }
 

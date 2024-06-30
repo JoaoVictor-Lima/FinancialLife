@@ -4,9 +4,10 @@ import App from './App.jsx';
 
 import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
 
-//Paginas
+//Pages
 import LoginSignUp from './routes/Login/LoginSignUp.jsx';
 import LoginSignIn from './routes/Login/LoginSignIn.jsx';
+import FinancialControl from './routes/FinancialControl/FinancialControlApp.jsx';
 
 import './index.css';
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/SignUp",
         element: <LoginSignUp/>
+      },
+      {
+        path: "/FinancialControl",
+        element: <FinancialControl/>
       }
     ]
   }
