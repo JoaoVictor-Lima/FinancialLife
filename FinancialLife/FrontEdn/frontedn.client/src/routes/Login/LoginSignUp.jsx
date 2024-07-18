@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SignUpForm from '../../Core/Componets/Panel/Forms/SignUpForm/SignUpForm.jsx';
+import SignUpForm from '../../Core/Containers/Form/SignUpForm/SignUpForm';
 import './Style/LoginSignUp.css';
 
 

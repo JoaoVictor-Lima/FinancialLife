@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SaveButton from '../../../Buttons/SaveButton/SaveButton';
-import formatValueByType from '../../../../Utils/DataFormatting/FomartValueByType';
-import Panel from '../../BasePanel/Panel'
+import SaveButton from '../../../Components/Button/SaveButton/SaveButton';
+import formatValueByType from '../../../Utils/DataFormatting/FomartValueByType';
+import Panel from '../../Base/Panel/Panel'
 
 import './DefaultForm.css'
 

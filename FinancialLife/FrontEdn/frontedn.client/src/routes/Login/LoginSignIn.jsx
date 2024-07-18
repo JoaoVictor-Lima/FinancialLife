@@ -1,9 +1,8 @@
 import { React, useState} from 'react'
-import DefaultButton from '../../Core/Componets/Buttons/DefaultButton/DefaultButton'
+import DefaultButton from '../../Core/Components/Button/DefaultButton/DefaultButton'
 
 import './Style/LoginSignIn.css'
 import { Link } from 'react-router-dom'
-import api from '../../Core/Utils/Api/axios'
 
 const LoginSignIn = () => {
   const [email, setEmail] = useState('');

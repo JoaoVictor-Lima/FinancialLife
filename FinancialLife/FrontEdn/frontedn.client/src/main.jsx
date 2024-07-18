@@ -7,7 +7,8 @@ import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
 //Pages
 import LoginSignUp from './routes/Login/LoginSignUp.jsx';
 import LoginSignIn from './routes/Login/LoginSignIn.jsx';
-import FinancialControl from './routes/FinancialControl/FinancialControlApp.jsx';
+import FinancialControl from './routes/FinancialControl/FinancialControl.jsx'
+
 
 import './index.css';
 
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/FinancialControl",
         element: <FinancialControl/>
-      }
+      },
     ]
   }
 ])
