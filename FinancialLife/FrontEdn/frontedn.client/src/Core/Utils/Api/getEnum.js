@@ -1,9 +1,9 @@
 import api from './axios'; 
 
-const getEnum = async (enumType) => {
+const getEnum = async (url) => {
   try {
-    const response = await api.get('Enum/GetEnumValues', {
-      params: { enumType }
+    const response = await api.get('Enum/GetEnum', {
+      params: { url }
     });
     return response.data;
   } catch (error) {

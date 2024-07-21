@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import api from '../../../Core/Utils/Api/axios';
-import getEnum from '../../../Core/Utils/Api/getEnum';
 
 //Style
 import './Home.css'
@@ -16,15 +14,6 @@ import Dashboard from './Dashboard/Dashboard'
 
 
 const Home = () => {
-  
-  const [selectedOption, setSelectedOption] = useState('');
-
-  const handleSelectChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
-debugger
-  const options = getEnum('ContractEntity.Enums.Core.Uteis.MonthEnum')
 
   return (
     <div>
@@ -33,11 +22,8 @@ debugger
       </div>
       <div>
       <Select
-        options={options}
-        value={selectedOption}
-        onChange={handleSelectChange}
+        url={'FinancialLifeDomain/Enums/MonthEnum'}
       />
-        Julho
       </div>
       
       <Dashboard/>

@@ -9,9 +9,9 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontend.client", "FrontEdn
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{35E1DE7A-2345-4619-A291-5C023EC0DEF2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{8A71CD30-7EA0-4F9D-A52A-807B85267196}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{8A71CD30-7EA0-4F9D-A52A-807B85267196}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{FF2DDADE-1D0F-424B-ABA1-342ACB571392}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{FF2DDADE-1D0F-424B-ABA1-342ACB571392}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{EC8768B3-A247-4A25-A965-41706DA2DBDE}"
 EndProject
@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialLifeApplication", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinacialLifeDtos", "FinacialLifeDtos\FinacialLifeDtos.csproj", "{E8B3EE44-8525-4BE6-B96B-819B8A5B6CE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractEntity", "ContractEntity\ContractEntity.csproj", "{676EF031-3AAF-4496-B60B-A2CC3B8BE814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractEntity", "ContractEntity\ContractEntity.csproj", "{676EF031-3AAF-4496-B60B-A2CC3B8BE814}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialLifeServices", "FinancialLifeServices\FinancialLifeServices.csproj", "{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{676EF031-3AAF-4496-B60B-A2CC3B8BE814}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{676EF031-3AAF-4496-B60B-A2CC3B8BE814}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{676EF031-3AAF-4496-B60B-A2CC3B8BE814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{CE11DB92-6D8E-4C04-9C4A-6EA687251C5D} = {FF2DDADE-1D0F-424B-ABA1-342ACB571392}
 		{E8B3EE44-8525-4BE6-B96B-819B8A5B6CE7} = {FF2DDADE-1D0F-424B-ABA1-342ACB571392}
 		{676EF031-3AAF-4496-B60B-A2CC3B8BE814} = {EC8768B3-A247-4A25-A965-41706DA2DBDE}
+		{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2} = {8A71CD30-7EA0-4F9D-A52A-807B85267196}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DECD767-0F98-4394-BBFA-3A0F08466DB7}

@@ -1,0 +1,23 @@
+.default-select {
+    width: 150px;
+    height: 30px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .default-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.25);
+  }
+  
+  .default-select option {
+    padding: 8px;
+  }

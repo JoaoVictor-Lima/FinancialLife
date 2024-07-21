@@ -1,7 +1,9 @@
 using FinacialLifeDtos.Core.People;
 using FinancialLifeApplication;
+using FinancialLifeApplication.AppServices.Utils;
 using FinancialLifeApplication.Interfaces.Core.Location;
 using FinancialLifeApplication.Interfaces.Core.People;
+using FinancialLifeApplication.Interfaces.Utils;
 using FinancialLifeApplication.Services.Core.Location;
 using FinancialLifeApplication.Services.Core.Person;
 using FinancialLifeDomain.Core.AbstractFactory;
@@ -12,6 +14,8 @@ using FinancialLifeDomain.Interfaces.Repository.Core.People;
 using FinancialLifeInfrastructureData.Context;
 using FinancialLifeInfrastructureData.Repository.Core.Location;
 using FinancialLifeInfrastructureData.Repository.Core.People;
+using FinancialLifeServices.Interfaces.Utils.Enums;
+using FinancialLifeServices.Services.Utils.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
@@ -25,6 +29,9 @@ builder.Services.AddScoped<INaturalPersonRepository, NaturalPersonRepository>();
 
 builder.Services.AddScoped<ICountryAppService, CountryAppService>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+
+builder.Services.AddScoped<IEnumAppService, EnumAppService>();
+builder.Services.AddScoped<IGetValuesEnum, GetValuesEnum>();
 
 builder.Services.AddScoped<IFactory<NaturalPerson, NaturalPersonDto>, NaturalPersonFactory>();
 builder.Services.AddScoped<IFactory<PhonePerson, PhonePersonDto>, PhonePersonFactory>();
