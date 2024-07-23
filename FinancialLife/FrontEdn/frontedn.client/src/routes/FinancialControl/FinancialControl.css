@@ -27,6 +27,7 @@
 } */
 
 .nav-item {
+    cursor: pointer;
     padding: 5px;
     color: rgb(33, 32, 32);
 }
@@ -36,7 +37,7 @@
 }
 
 .nav-item.active {
-    color: blue;
+    color: rgb(6, 0, 176);
     font-weight: bold;
   }
 
