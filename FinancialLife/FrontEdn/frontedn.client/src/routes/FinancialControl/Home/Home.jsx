@@ -43,7 +43,7 @@ const Home = () => {
       </div>
       <div className='month-select'>
       <Select
-        url={'FinancialLifeDomain/Enums/MonthEnum'}
+        url={'ContractEntity.Enums.Core.Utils.MonthEnum'}
       />
       </div>
       <Tab

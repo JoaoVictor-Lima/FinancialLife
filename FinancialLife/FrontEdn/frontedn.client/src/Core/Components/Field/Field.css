@@ -1,0 +1,36 @@
+.default-field {
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .default-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .field-input {
+    position: relative;
+  }
+  
+  .default-field input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out;
+  }
+  
+  .default-field input:focus {
+    outline: none;
+    border-color: dodgerblue;
+  }
+  
+  .default-field .field-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }

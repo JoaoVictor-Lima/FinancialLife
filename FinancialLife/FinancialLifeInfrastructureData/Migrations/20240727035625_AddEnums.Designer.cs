@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinancialLifeInfrastructureData.Migrations
 {
     [DbContext(typeof(FinancialLifeDbContext))]
-    [Migration("20240625010619_Update-Class-Names")]
-    partial class UpdateClassNames
+    [Migration("20240727035625_AddEnums")]
+    partial class AddEnums
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

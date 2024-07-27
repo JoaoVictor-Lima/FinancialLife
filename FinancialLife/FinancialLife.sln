@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{48B85AB7-8A33-4A96-83DF-BEF01BA3DDB9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - CrosCutting", "4.1 - CrosCutting", "{E1A11765-4037-45C6-BB22-51C02CB6E7C7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - CrossCutting", "4.1 - CrossCutting", "{E1A11765-4037-45C6-BB22-51C02CB6E7C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - Data", "4.2 - Data", "{0B9553A9-AB39-4ED1-B8AF-7E222AA6513A}"
 EndProject
@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinacialLifeDtos", "Finacia
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractEntity", "ContractEntity\ContractEntity.csproj", "{676EF031-3AAF-4496-B60B-A2CC3B8BE814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialLifeServices", "FinancialLifeServices\FinancialLifeServices.csproj", "{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialLifeServices", "FinancialLifeServices\FinancialLifeServices.csproj", "{41FE23EF-F963-4D9B-9C55-C1B0B3B9DCD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
