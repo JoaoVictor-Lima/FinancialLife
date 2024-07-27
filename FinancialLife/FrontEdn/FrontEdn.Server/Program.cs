@@ -11,7 +11,10 @@ using FinancialLifeDomain.Entities.Core.People;
 using FinancialLifeDomain.Factories.Core.People;
 using FinancialLifeDomain.Interfaces.Repository.Core.Location;
 using FinancialLifeDomain.Interfaces.Repository.Core.People;
+using FinancialLifeInfrastructureData.Configuration;
 using FinancialLifeInfrastructureData.Context;
+using FinancialLifeInfrastructureData.DbServices;
+using FinancialLifeInfrastructureData.DbServices.Interface;
 using FinancialLifeInfrastructureData.Repository.Core.Location;
 using FinancialLifeInfrastructureData.Repository.Core.People;
 using FinancialLifeServices.Interfaces.Utils.Enums;
@@ -38,6 +41,7 @@ builder.Services.AddScoped<IFactory<PhonePerson, PhonePersonDto>, PhonePersonFac
 builder.Services.AddScoped<IFactory<EmailPerson, EmailPersonDto>, EmailPersonFactory>();
 builder.Services.AddScoped<IFactory<PersonAddress, PersonAddressDto>, PersonAddressFactory>();
 
+builder.Services.AddScoped<IMigrationEnums, MigrationEnums>();
 
 builder.Services.AddControllers()
     .AddApplicationPart(typeof(FinancialLifeApplicationAssemblyReference).Assembly)
@@ -89,4 +93,15 @@ app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
 
+if (app.Environment.IsDevelopment())
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var migrationEnums = scope.ServiceProvider.GetRequiredService<IMigrationEnums>();
+        await migrationEnums.MigrateEnums();
+    }
+}
+
 app.Run();
+
+

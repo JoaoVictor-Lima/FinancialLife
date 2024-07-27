@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Panel from '../../../Core/Containers/Base/Panel/Panel';
 
 //Style
 import './Home.css'
@@ -11,23 +12,44 @@ import Select from '../../../Core/Components/Select/Select';
 
 //content
 import Dashboard from './Dashboard/Dashboard'
+import Tab from '../../../Core/Containers/Base/Tab/Tab';
+
+const tabs = [
+  {
+    label: 'Dashboard',
+    content: <Dashboard/>,
+  },
+  {
+    label: 'Income',
+    content: <div>Content for Tab 2</div>,
+  },
+  {
+    label: 'Expense',
+    content: <div>Content for Tab 3</div>,
+  },
+  {
+    label: 'Savings',
+    content: <div>Content for Tab 3</div>,
+  },
+];
 
 
 const Home = () => {
 
   return (
-    <div>
-      <div>
+    <Panel>
+      <div className='user-information'>
         João Victor
       </div>
-      <div>
+      <div className='month-select'>
       <Select
-        url={'FinancialLifeDomain/Enums/MonthEnum'}
+        url={'ContractEntity.Enums.Core.Utils.MonthEnum'}
       />
       </div>
-      
-      <Dashboard/>
-    </div>
+      <Tab
+        tabs={tabs}
+      />
+    </Panel>
   )
 }
 

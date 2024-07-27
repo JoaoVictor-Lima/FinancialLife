@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace FinancialLifeDomain.Enums
+namespace ContractEntity.Enums.Core.Utils
 {
     public enum MonthEnum : int
     {
@@ -8,6 +8,9 @@ namespace FinancialLifeDomain.Enums
         January = -1,
 
         [Description("February")]
-        February = -2
+        February = -2,
+
+        [Description("Teste TEste TEste")]
+        March = -3
     }
 }

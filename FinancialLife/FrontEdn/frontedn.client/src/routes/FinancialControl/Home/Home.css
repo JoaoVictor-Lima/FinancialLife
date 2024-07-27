@@ -1,0 +1,9 @@
+.content {
+    display: column;
+}
+
+.month-select {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

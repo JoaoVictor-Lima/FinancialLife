@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { forwardRef } from 'react';
 
-import './Panel.css' 
+import './Panel.css'
 
-const Panel = ({children, className, style, onClick }) => {
+const Panel = forwardRef(({children, className, style, onClick }, ref) => {
   return (
-    <div className = {className ?? 'default-panel'}
+    <div 
+      className = {className ?? 'default-panel'}
+      ref={ref}
       style={style}
       onClick={onClick}>
       {children}
-    </div>
+  </div>
   )
-}
+});
 
 export default Panel

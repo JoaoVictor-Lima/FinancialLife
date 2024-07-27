@@ -40,6 +40,8 @@ const Select = ({options, value, onChange, placeholder, className, url, loadOnFo
 
     if(response){
       return response;
+
+      
     }
     else
       return [];
@@ -57,7 +59,7 @@ const Select = ({options, value, onChange, placeholder, className, url, loadOnFo
     setselectPlaceholder(null)
   };
 
-  const handleSelectChange = (event) => {
+  const handleChange = (event) => {
     const newValue = event.target.value;
     setSelectedValue(newValue);
     if (onChange) {
@@ -66,7 +68,7 @@ const Select = ({options, value, onChange, placeholder, className, url, loadOnFo
   };
 
   return (
-    <select className={className ?? 'default-select'} value={selectedValue} onChange={handleSelectChange} onFocus={handleFocus}>
+    <select className={className ?? 'default-select'} value={selectedValue} onChange={handleChange} onFocus={handleFocus}>
       {selectPlaceholder != undefined || selectPlaceholder != null ? <option value="" disabled>{selectPlaceholder}</option> : null}
       {(optionsSelect && optionsSelect.length > 0) ? (
         optionsSelect.map(option => (

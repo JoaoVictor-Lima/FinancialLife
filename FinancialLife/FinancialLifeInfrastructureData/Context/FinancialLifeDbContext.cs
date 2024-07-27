@@ -1,5 +1,6 @@
 ﻿using FinancialLifeDomain.Entities.Core.Location;
 using FinancialLifeDomain.Entities.Core.People;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -7,6 +8,7 @@ namespace FinancialLifeInfrastructureData.Context
 {
     public class FinancialLifeDbContext : DbContext
     {
+
         public FinancialLifeDbContext(DbContextOptions<FinancialLifeDbContext> options)
             : base(options)
         {

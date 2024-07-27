@@ -1,4 +1,5 @@
-﻿using FinancialLifeDomain.Entities.Core.People;
+﻿using ContractEntity.Enums.Core.People.NatualPerson;
+using FinancialLifeDomain.Entities.Core.People;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -39,7 +40,7 @@ namespace FinancialLifeInfrastructureData.Map.Core.People
 
             builder.Property(x => x.PersonGender)
                 .IsRequired()
-                .HasColumnName("PersonGender")
+                .HasColumnName("IdPersonGender")
                 .HasColumnType("int");
 
         }
