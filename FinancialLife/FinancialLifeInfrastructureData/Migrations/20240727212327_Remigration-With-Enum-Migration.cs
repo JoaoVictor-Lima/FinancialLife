@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinancialLifeInfrastructureData.Migrations
 {
     /// <inheritdoc />
-    public partial class AddEnums : Migration
+    public partial class RemigrationWithEnumMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -118,7 +118,7 @@ namespace FinancialLifeInfrastructureData.Migrations
                     Name = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
                     BirthDate = table.Column<DateTime>(type: "date", nullable: false),
                     DocumentNumber = table.Column<string>(type: "varchar(11)", maxLength: 11, nullable: false),
-                    PersonGender = table.Column<int>(type: "int", nullable: false)
+                    IdPersonGender = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

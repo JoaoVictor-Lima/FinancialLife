@@ -22,7 +22,7 @@ namespace FinancialLifeInfrastructureData.Configuration
 
             #region Register Relationship
 
-            AddEnumRelationship(typeof(PersonGenderEnum), typeof(NaturalPerson), typeof(PersonAddress));
+            AddEnumRelationship(typeof(PersonGenderEnum), typeof(NaturalPerson));
 
             #endregion
         }
@@ -35,7 +35,9 @@ namespace FinancialLifeInfrastructureData.Configuration
                 throw new ArgumentException($"{enumType.Name} não é um enum.", nameof(enumType));
             }
 
-            EnumsRelationshipRegister.Add(new EnumRelationshipRegister(enumType, entityTypes));
+            var enumRegisterType = EnumsRegistration.Where(x => x.Enum == enumType).FirstOrDefault();
+
+            EnumsRelationshipRegister.Add(new EnumRelationshipRegister(enumRegisterType, entityTypes));
         }
         public void AddEnumRegister(Type enumType) 
         {
@@ -61,12 +63,12 @@ namespace FinancialLifeInfrastructureData.Configuration
 
     public class EnumRelationshipRegister
     {
-        public Type EnumType { get; set; }
+        public EnumRegistration EnumRegistration{ get; set; }
         public List<Type> EntityTypes { get; set; }
 
-        public EnumRelationshipRegister(Type enumType, params Type[] entityTypes)
+        public EnumRelationshipRegister(EnumRegistration enumRegistration, params Type[] entityTypes)
         {
-            EnumType = enumType;
+            EnumRegistration = enumRegistration;
             EntityTypes = new List<Type>(entityTypes);
         }
     }

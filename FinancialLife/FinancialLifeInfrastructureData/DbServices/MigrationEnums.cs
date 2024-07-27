@@ -4,6 +4,7 @@ using FinancialLifeInfrastructureData.DbServices.Interface;
 using FinancialLifeInfrastructureData.Utils.Enum;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Logging;
 using System.ComponentModel;
 using System.Text;
@@ -39,8 +40,78 @@ namespace FinancialLifeInfrastructureData.DbServices
             if (enumsToUpdate.Count > 0)
                 UpdateEnumsDataBase(enumsToUpdate);
 
+            AddConstraints();
+
             _logger.LogInformation("Enum migration completed.");
             return Task.CompletedTask;
+        }
+
+        private void AddConstraints()
+        {
+            var model = _context.Model;
+
+            foreach (var relationship in EnumMapConfig.EnumsRelationshipRegister)
+            {
+                foreach (var entityType in relationship.EntityTypes)
+                {
+                    var entityTypeName = model.FindEntityType(entityType)?.GetTableName();
+                    var enumTableName = GetTableName(relationship.EnumRegistration);
+                    var foreignKeyPropertyName = GetForeignKeyPropertyName(model.FindEntityType(entityType), relationship.EnumRegistration.Enum);
+
+                    if (entityTypeName != null && enumTableName != null)
+                    {
+                        var constraintName = $"FK_{entityTypeName}_{enumTableName}";
+
+                        if (!ConstraintExists(entityTypeName, constraintName))
+                        {
+                            var command = $@"
+                                    ALTER TABLE {entityTypeName}
+                                    ADD CONSTRAINT {constraintName}
+                                    FOREIGN KEY ({foreignKeyPropertyName}) REFERENCES {enumTableName}(Id);
+                                 ";
+
+                            _context.Database.ExecuteSqlRaw(command);
+
+                            Console.WriteLine($"Constraint added: {constraintName}");
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool ConstraintExists(string tableName, string constraintName)
+        {
+            var checkCommand = $@"
+                SELECT COUNT(*)
+                FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+                WHERE CONSTRAINT_TYPE = 'FOREIGN KEY'
+                    AND TABLE_NAME = '{tableName}'
+                    AND CONSTRAINT_NAME = '{constraintName}';
+            ";
+
+            var exists = _context.Database.GetDbConnection().CreateCommand();
+            exists.CommandText = checkCommand;
+
+            if (exists.Connection.State != System.Data.ConnectionState.Open)
+            {
+                exists.Connection.Open();
+            }
+
+            var result = (int)exists.ExecuteScalar();
+            return result > 0;
+        }
+
+        private string GetForeignKeyPropertyName(IEntityType entityType, Type enumType)
+        {
+            var property = entityType.GetProperties()
+                .FirstOrDefault(p => p.ClrType == enumType);
+
+            if (property == null)
+            {
+                return "";
+            }
+
+            return property.GetColumnName(StoreObjectIdentifier.Table(entityType.GetTableName(), null));
         }
 
         private (List<EnumRegistration> newEnums, List<EnumRegistration> newnums) GetEnumsToMigration()

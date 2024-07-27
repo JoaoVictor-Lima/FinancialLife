@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinancialLifeInfrastructureData.Migrations
 {
     [DbContext(typeof(FinancialLifeDbContext))]
-    [Migration("20240727035625_AddEnums")]
-    partial class AddEnums
+    [Migration("20240727212327_Remigration-With-Enum-Migration")]
+    partial class RemigrationWithEnumMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -302,7 +302,7 @@ namespace FinancialLifeInfrastructureData.Migrations
 
                     b.Property<int>("PersonGender")
                         .HasColumnType("int")
-                        .HasColumnName("PersonGender");
+                        .HasColumnName("IdPersonGender");
 
                     b.ToTable("NaturalPerson", (string)null);
                 });

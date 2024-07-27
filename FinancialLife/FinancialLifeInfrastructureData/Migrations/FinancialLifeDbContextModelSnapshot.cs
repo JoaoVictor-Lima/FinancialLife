@@ -299,7 +299,7 @@ namespace FinancialLifeInfrastructureData.Migrations
 
                     b.Property<int>("PersonGender")
                         .HasColumnType("int")
-                        .HasColumnName("PersonGender");
+                        .HasColumnName("IdPersonGender");
 
                     b.ToTable("NaturalPerson", (string)null);
                 });
