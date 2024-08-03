@@ -1,6 +1,5 @@
 ﻿using FinancialLifeDomain.Entities.Core.Location;
 using FinancialLifeDomain.Entities.Core.People;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -28,7 +27,6 @@ namespace FinancialLifeInfrastructureData.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            //Configuração para evitar por padrão deleções em casacata
             modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()).ToList().ForEach(x => x.DeleteBehavior = DeleteBehavior.Restrict);
         }
     }

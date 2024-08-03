@@ -10,7 +10,7 @@ namespace ContractEntity.Enums.Core.Utils
         [Description("February")]
         February = -2,
 
-        [Description("Teste TEste TEste")]
+        [Description("March")]
         March = -3
     }
 }

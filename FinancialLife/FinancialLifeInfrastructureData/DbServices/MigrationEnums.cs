@@ -30,8 +30,6 @@ namespace FinancialLifeInfrastructureData.DbServices
         {
             _logger.LogInformation("Starting enum migration...");
 
-
-            GetExistingTables();
             var (newEnums, enumsToUpdate) = GetEnumsToMigration();
 
             if (newEnums.Count() > 0)
@@ -173,32 +171,32 @@ namespace FinancialLifeInfrastructureData.DbServices
                 var enumDbValues = GetEnumDb(GetTableName(enumRegister)).ToList();
 
 
-                List<EnumDbValueClass> enumsToAdd = new List<EnumDbValueClass>();
-                List<EnumDbValueClass> enumsToDelete = new List<EnumDbValueClass>();
-                List<EnumDbValueClass> enumsToUpdate = new List<EnumDbValueClass>();
+                List<EnumDbValueClass> enumsValuesToAdd = new List<EnumDbValueClass>();
+                List<EnumDbValueClass> enumsValuesToDelete = new List<EnumDbValueClass>();
+                List<EnumDbValueClass> enumsValuesToUpdate = new List<EnumDbValueClass>();
 
                 foreach (var enumValue in enumValues)
                 {
                     var dbValue = enumDbValues.FirstOrDefault(db => db.Id == enumValue.Id);
 
                     if (dbValue == null)
-                        enumsToAdd.Add(enumValue);
+                        enumsValuesToAdd.Add(enumValue);
 
                     else if (dbValue.Description != enumValue.Description)
-                        enumsToUpdate.Add(new EnumDbValueClass(enumValue.Id, enumValue.Description));
+                        enumsValuesToUpdate.Add(new EnumDbValueClass(enumValue.Id, enumValue.Description));
                 }
 
                 foreach (var enumDbValue in enumDbValues)
                 {
                     if (!enumValues.Any(enumValue => enumValue.Id == enumDbValue.Id))
                     {
-                        enumsToDelete.Add(enumDbValue);
+                        enumsValuesToDelete.Add(enumDbValue);
                     }
                 }
 
-                if (enumsToAdd.Count() > 0) InsertEnumValues(GetTableName(enumRegister), enumsToAdd);
-                if (enumsToDelete.Count() > 0) DeleteEnumValues(GetTableName(enumRegister), enumsToDelete);
-                if (enumsToUpdate.Count() > 0) UpdateEnumValues(GetTableName(enumRegister), enumsToUpdate);
+                if (enumsValuesToAdd.Count() > 0) InsertEnumValues(GetTableName(enumRegister), enumsValuesToAdd);
+                if (enumsValuesToDelete.Count() > 0) DeleteEnumValues(GetTableName(enumRegister), enumsValuesToDelete);
+                if (enumsValuesToUpdate.Count() > 0) UpdateEnumValues(GetTableName(enumRegister), enumsValuesToUpdate);
             }
         }
 
